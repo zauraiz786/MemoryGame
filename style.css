@@ -1,0 +1,35 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(https://images.unsplash.com/photo-1508614999368-9260051292e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNvbG9yJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80);
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+}
+.h1{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+h1{
+    margin: auto;
+    font-size: 50px;
+    color: #a9dce3;
+}
+.mainTile{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 250px;
+    width: 400px;
+    grid-gap: 2rem;
+}
+.tiles{
+    background-color: gray;
+    border: 5px solid white;
+    cursor: pointer;
+}
