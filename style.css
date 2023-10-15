@@ -24,7 +24,7 @@ h1{
 .mainTile{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 250px;
+    height: 450px;
     width: 400px;
     grid-gap: 2rem;
 }

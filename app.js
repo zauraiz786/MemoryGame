@@ -1,5 +1,5 @@
 const mainTile = document.querySelector(".mainTile");
-const colors = ['teal', 'crimson', 'greenyellow'];
+const colors = ['teal', 'crimson', 'greenyellow', 'pink', 'purple', 'brown'];
 const sixColor = [...colors, ...colors];
 const tileCount = sixColor.length;
 
@@ -28,6 +28,11 @@ function creatingTiles(color){
 
         const sameTile = activeTile.getAttribute('data-color')
         if(sameTile == color){
+            activeTile.style.backgroundColor = 'transparent';
+            activeTile.style.border = 'transparent';
+            tiles.style.backgroundColor = 'transparent';
+            tiles.style.border = 'transparent';
+        
             awaitingEndOfMove = false;
             activeTile = null;
             
