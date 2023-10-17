@@ -10,10 +10,10 @@ let awaitingEndOfMove = false;
 
 function creatingTiles(color){
     const tiles = document.createElement('div');
-
+    
     tiles.classList.add('tiles');
     tiles.setAttribute('data-color', color)
-
+    
     tiles.addEventListener('click', function(){     
         if(awaitingEndOfMove){
             return;
@@ -39,6 +39,7 @@ function creatingTiles(color){
             count += 2;
             if(count === tileCount){
                 alert(`You Win!`);
+                awaitingEndOfMove = true;
             }
 
             return;
