@@ -30,6 +30,6 @@ h1{
 }
 .tiles{
     background-color: gray;
-    border: 5px solid white;
+    border: 5px solid lightgray;
     cursor: pointer;
 }

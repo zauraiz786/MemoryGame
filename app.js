@@ -8,36 +8,32 @@ let count = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
 
-function creatingTiles(color){
+function creatingTiles(color) {
     const tiles = document.createElement('div');
-    
+
     tiles.classList.add('tiles');
     tiles.setAttribute('data-color', color)
-    
-    tiles.addEventListener('click', function(){     
-        if(awaitingEndOfMove){
+
+    tiles.addEventListener('click', function () {
+        if (awaitingEndOfMove) {
             return;
         }
 
         tiles.style.backgroundColor = color;
 
-        if(!activeTile){
+        if (!activeTile) {
             activeTile = tiles;
             return;
         }
 
         const sameTile = activeTile.getAttribute('data-color')
-        if(sameTile == color){
-            activeTile.style.backgroundColor = 'transparent';
-            activeTile.style.border = 'transparent';
-            tiles.style.backgroundColor = 'transparent';
-            tiles.style.border = 'transparent';
-        
+        if (sameTile == color) {
+
             awaitingEndOfMove = false;
             activeTile = null;
-            
+
             count += 2;
-            if(count === tileCount){
+            if (count === tileCount) {
                 alert(`You Win!`);
                 awaitingEndOfMove = true;
             }
@@ -45,26 +41,26 @@ function creatingTiles(color){
             return;
         }
 
-        setTimeout(function(){
+        setTimeout(function () {
             activeTile.style.backgroundColor = null;
             tiles.style.backgroundColor = null;
 
             awaitingEndOfMove = false;
             activeTile = null;
-           
+
         }, 1000);
 
         awaitingEndOfMove = true;
     })
-    
+
     return tiles;
 }
 
-for(let i=0; i<tileCount; i++){
-    
+for (let i = 0; i < tileCount; i++) {
+
     const randomColor = Math.floor(Math.random() * sixColor.length);
     const color = sixColor[randomColor];
-    sixColor.splice(randomColor,1);
+    sixColor.splice(randomColor, 1);
     const tile = creatingTiles(color)
     mainTile.appendChild(tile);
 }
