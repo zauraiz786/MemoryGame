@@ -3,7 +3,6 @@ const colors = ['teal', 'crimson', 'greenyellow', 'pink', 'purple', 'brown'];
 const sixColor = [...colors, ...colors];
 const tileCount = sixColor.length;
 
-
 let count = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
